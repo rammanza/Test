@@ -1,13 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sairam Kirana & General Stores</title>
+  <meta name="description" content="Sairam Kirana & General Stores - quality groceries & everyday essentials." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#0b7a5f;
+      --dark:#0e1b2a;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.06);
+      --radius:12px;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#0f1724;background:linear-gradient(180deg,#f7fafc 0%, #f1f5f9 100%)}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#34b399);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 6px 18px rgba(11,122,95,0.18)}
+    nav a{margin-left:18px;text-decoration:none;color:#0f1724;font-weight:600}
+    .cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* hero */
+    .hero{display:flex;gap:28px;align-items:center;margin:28px 0}
+    .hero-left{flex:1}
+    .hero h1{margin:0;font-size:28px}
+    .hero p{color:var(--muted);margin:8px 0 18px}
+    .hero-buttons{display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-outline{background:transparent;border:2px solid #e6eef3;color:#0f1724}
+    .hero-right{flex:1}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.9),#fff);padding:18px;border-radius:16px;box-shadow:0 8px 30px rgba(15,23,36,0.06)}
+
+    /* product grid */
+    .section{margin:36px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,36,0.04);display:flex;flex-direction:column;gap:10px}
+    .product-img{height:120px;border-radius:10px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+    .price{font-weight:700;color:var(--accent)}
+
+    /* about & contact */
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    footer{margin-top:36px;padding:22px 0;border-top:1px solid #e6eef3;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:720px){
+      .hero{flex-direction:column}
+      nav{display:none}
+      .two-col{grid-template-columns:1fr}
+    }
+
+    /* small helper */
+    .tag{background:var(--glass);padding:6px 10px;border-radius:999px;font-weight:600;color:var(--accent);display:inline-block}
+  </style>
 </head>
 <body>
-    <h1>🚀 Hello from My Test Website</h1>
-    <p>If you see this on Vercel, deployment worked!</p>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SK</div>
+        <div>
+          <div style="font-weight:700">Sairam Kirana</div>
+          <div style="font-size:12px;color:var(--muted)">&nbsp;Kirana & General Stores</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="tel:+91">Call Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-left">
+          <div class="tag">Trusted since 2025</div>
+          <h1>Fresh groceries & daily essentials — delivered with care</h1>
+          <p>Welcome to Sairam Kirana & General Stores. We offer a wide range of groceries, cleaning supplies, snacks, and household essentials at great prices — right in your neighborhood.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#products">Shop Products</a>
+            <a class="btn btn-outline" href="#contact">Visit / Contact</a>
+          </div>
+          <ul style="margin-top:12px;color:var(--muted);font-size:14px;padding-left:18px">
+            <li>Fresh daily produce</li>
+            <li>Competitive prices & bulk options</li>
+            <li>Home delivery & easy returns</li>
+          </ul>
+        </div>
+        <div class="hero-right">
+          <div class="hero-card">
+            <h3 style="margin:0 0 8px">Order Highlights</h3>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <div style="flex:1;min-width:160px">
+                <strong>Open Hours</strong>
+                <div style="color:var(--muted)">8:00 AM — 9:00 PM</div>
+              </div>
+              <div style="flex:1;min-width:160px">
+                <strong>Home Delivery</strong>
+                <div style="color:var(--muted)">Available within 5 km</div>
+              </div>
+            </div>
+            <hr style="margin:12px 0;border:none;border-top:1px solid #eef2f6">
+            <div style="display:flex;gap:8px;align-items:center">
+              <div style="width:54px;height:54px;border-radius:8px;background:#f7fafc;display:flex;align-items:center;justify-content:center;font-weight:700">⭐</div>
+              <div>
+                <div style="font-weight:700">Top seller: Sairam Atta 5kg</div>
+                <div style="color:var(--muted);font-size:13px">Great quality, trusted brand</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="section">
+        <h2 style="margin:0 0 12px">Popular Products</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="product-img">Atta 5kg</div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="font-weight:700">Sairam Atta 5kg</div>
+              <div class="price">₹249</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Premium wheat flour — finely milled.</div>
+            <div style="margin-top:auto;display:flex;gap:8px">
+              <a class="btn btn-primary" href="tel:+91">Call to order</a>
+              <a class="btn btn-outline" href="#contact">Add to cart</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="product-img">Rice 5kg</div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="font-weight:700">Basmati Rice 5kg</div>
+              <div class="price">₹399</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Long grain basmati — aromatic & fluffy.</div>
+            <div style="margin-top:auto;display:flex;gap:8px">
+              <a class="btn btn-primary" href="tel:+91">Call to order</a>
+              <a class="btn btn-outline" href="#contact">Add to cart</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="product-img">Oil 1L</div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="font-weight:700">Cooking Oil 1L</div>
+              <div class="price">₹149</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Refined oil — for everyday cooking.</div>
+            <div style="margin-top:auto;display:flex;gap:8px">
+              <a class="btn btn-primary" href="tel:+91">Call to order</a>
+              <a class="btn btn-outline" href="#contact">Add to cart</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="product-img">Snacks</div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="font-weight:700">Assorted Snacks</div>
+              <div class="price">From ₹20</div>
+            </div>
+            <div style="color:var(--muted);font-size:13px">Chips, namkeen & packaged snacks.</div>
+            <div style="margin-top:auto;display:flex;gap:8px">
+              <a class="btn btn-primary" href="tel:+91">Call to order</a>
+              <a class="btn btn-outline" href="#contact">Add to cart</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h2 style="margin:0 0 12px">About Sairam Kirana</h2>
+        <div style="color:var(--muted);max-width:860px;line-height:1.5">Sairam Kirana & General Stores is a family-run neighbourhood store focused on delivering fresh groceries and household essentials at fair prices. We source trusted brands and local goods so you get quality every time. Stop by for quick shopping or call us for doorstep delivery.</div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2 style="margin:0 0 12px">Visit or Contact</h2>
+        <div class="two-col">
+          <div>
+            <div style="background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,36,0.04)">
+              <h3 style="margin-top:0">Sairam Kirana & General Stores</h3>
+              <p style="color:var(--muted);margin:6px 0">Main Road, Near Temple, Your City</p>
+              <p style="margin:6px 0"><strong>Phone:</strong> <a href="tel:+91">+91-XXXXXXXXXX</a></p>
+              <p style="margin:6px 0"><strong>Open:</strong> 8:00 AM — 9:00 PM</p>
+              <div style="margin-top:10px">
+                <a class="btn btn-primary" href="https://wa.me/91" target="_blank">Message on WhatsApp</a>
+              </div>
+            </div>
+
+            <div style="margin-top:14px;">
+              <!-- Map placeholder: replace src with your Google Maps embed URL -->
+              <iframe title="store-location" src="https://www.google.com/maps/embed?pb=" width="100%" height="220" style="border:0;border-radius:12px" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <aside style="background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,36,0.04)">
+            <h4 style="margin-top:0">Send us a message</h4>
+            <form onsubmit="event.preventDefault();alert('Thanks! We will call you shortly.')">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <input required placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #eef2f6" />
+                <input required placeholder="Phone" style="padding:10px;border-radius:8px;border:1px solid #eef2f6" />
+                <textarea required placeholder="Message" rows="4" style="padding:10px;border-radius:8px;border:1px solid #eef2f6"></textarea>
+                <button class="btn btn-primary" style="border:none;cursor:pointer">Send Message</button>
+              </div>
+            </form>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div>Sairam Kirana & General Stores — <span style="color:var(--muted)">All rights reserved</span></div>
+        <div style="color:var(--muted);font-size:13px">Made with care • Local shop friendly</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Small enhancement: smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();const target=document.querySelector(a.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  </script>
 </body>
 </html>
